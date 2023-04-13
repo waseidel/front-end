@@ -1,25 +1,28 @@
-import { Footer } from "flowbite-react";
 import {
-	BsFacebook,
-	BsInstagram,
-	BsTwitter,
-	BsGithub,
-	BsDribbble,
+  BsFacebook,
+  BsInstagram,
+  BsTwitter,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const FooterComponent = () => {
-	return (
-		<Footer container={true}>
-			<div className="w-full sm:flex sm:items-center sm:justify-between">
-				<Footer.Copyright href="#" by="ETMCorp™" year={2023} />
-				<div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-					<Footer.Icon href="#" icon={BsFacebook} />
-					<Footer.Icon href="#" icon={BsInstagram} />
-					<Footer.Icon href="#" icon={BsTwitter} />
-					<Footer.Icon href="#" icon={BsGithub} />
-					<Footer.Icon href="#" icon={BsDribbble} />
-				</div>
-			</div>
-		</Footer>
-	);
+  const links = [
+    { icon: <BsFacebook />, href: "https://facebook.com" },
+    { icon: <BsInstagram />, href: "https://instagram.com" },
+    { icon: <BsTwitter />, href: "https://twitter.com" },
+  ];
+  return (
+    <footer className="container">
+      <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <Link to="/">ETMCorp™ 2023</Link>
+        <ul className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link to={link.href}>{link.icon}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </footer>
+  );
 };

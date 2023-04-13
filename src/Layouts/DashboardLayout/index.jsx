@@ -1,21 +1,17 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import {
-  NavigationBarComponent as Navbar,
-  FooterComponent as Footer,
+  NavbarComponent,
+  FooterComponent,
 } from "../../components";
 
-import { Outlet } from "react-router-dom";
-
 const routes = [
-  { name: "Tablero de control", href: "/dashboard", isActive: true },
-  {
-    name: "Gestión Humana",
-    href: "/dashboard/gestion-humana",
-    isActive: false,
-  },
-  { name: "Operaciones", href: "/dashboard/operaciones", isActive: false },
-  { name: "Mantenimiento", href: "/dashboard/mantenimiento", isActive: false },
+  { name: "Tablero de control", href: "/dashboard" },
+  { name: "Gestión Humana", href: "/dashboard/gestion-humana" },
+  { name: "Operaciones", href: "/dashboard/operaciones" },
+  { name: "Mantenimiento", href: "/dashboard/mantenimiento" },
 ];
+
 const user = {
   name: "Walther Seidel",
   email: "contacto@wasei.dev",
@@ -26,11 +22,11 @@ const user = {
 export const DashboardLayout = () => {
   return (
     <div className="flex flex-col h-screen place-content-between">
-      <Navbar routes={routes} user={user} />
+      <NavbarComponent routes={routes} user={user} />
       <div className="bg-gray-300 h-full p-4">
         <Outlet />
       </div>
-      <Footer />
+      <FooterComponent />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import {
   OperacionesPage,
 } from "../pages";
 
-export const router = createBrowserRouter([
+export default createBrowserRouter([
   {
     path: "/",
     element: <LandingLayout />,

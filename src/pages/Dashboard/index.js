@@ -1,4 +1,4 @@
-export { DashboardPage } from "./DashboardPage";
-export { OperacionesPage } from "./OperacionesPage";
-export { GestionHumanaPage } from "./GestionHumanaPage";
-export { MantenimientoPage } from "./MantenimientoPage";
+export * from "./DashboardPage";
+export * from "./OperacionesPage";
+export * from "./GestionHumanaPage";
+export * from "./MantenimientoPage";

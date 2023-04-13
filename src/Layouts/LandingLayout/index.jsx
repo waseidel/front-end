@@ -1,22 +1,19 @@
 import { Outlet } from "react-router-dom";
-import {
-  NavigationBarComponent as Navbar,
-  FooterComponent as Footer,
-} from "../../components";
+import { NavbarComponent, FooterComponent } from "../../components";
 
 const routes = [
-  { name: "Inicio", href: "#", isActive: true },
-  { name: "Acerca de", href: "#acerca-de", isActive: false },
-  { name: "Proyectos", href: "#proyectos", isActive: false },
-  { name: "Contacto", href: "#contacto", isActive: false },
+  { name: "Inicio", href: "#" },
+  { name: "Acerca de", href: "#acerca-de" },
+  { name: "Proyectos", href: "#proyectos" },
+  { name: "Contacto", href: "#contacto" },
 ];
 
 export const LandingLayout = () => {
   return (
     <div className="flex flex-col h-screen place-content-between">
-      <Navbar routes={routes} />
+      <NavbarComponent routes={routes} />
       <Outlet />
-      <Footer />
+      <FooterComponent />
     </div>
   );
 };

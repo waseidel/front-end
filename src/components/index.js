@@ -1,2 +1,2 @@
-export { NavigationBarComponent } from "./NavigationBarComponent";
-export { FooterComponent } from "./FooterComponent";
+export * from "./NavbarComponent";
+export * from "./FooterComponent";
