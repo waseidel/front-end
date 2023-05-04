@@ -1,3 +1,1 @@
-export const MantenimientoPage = () => {
-  return <div>MantenimientoPage</div>;
-};
+export const MantenimientoPage = () => <div>MantenimientoPage</div>;

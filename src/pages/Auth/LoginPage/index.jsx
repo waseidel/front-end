@@ -1,5 +1,1 @@
-export const LoginPage = () => {
-  return (
-    <h1>LoginPage</h1>
-  );
-};
+export const LoginPage = () => <h1>LoginPage</h1>;

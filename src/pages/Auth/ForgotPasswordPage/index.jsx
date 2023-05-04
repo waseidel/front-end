@@ -1,5 +1,1 @@
-export const ForgotPasswordPage = () => {
-  return (
-    <h1>ForgotPasswordPage</h1>
-  );
-};
+export const ForgotPasswordPage = () => <h1>ForgotPasswordPage</h1>;

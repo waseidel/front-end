@@ -1,7 +1,7 @@
-import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
-import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Link, NavLink } from "react-router-dom";
 // { routes, user }
 export const NavbarComponent = ({ routes, user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,17 +15,22 @@ export const NavbarComponent = ({ routes, user }) => {
       <div className="block py-4 space-y-4 md:space-y-0 md:container md:flex md:flex-row items-center md:gap-4 px-4 md:h-14 dark:bg-gray-800 dark:text-gray-100">
         <div className="flex flex-row w-full md:w-fit justify-between">
           Logo
-          <button className="md:hidden" type="button" onClick={() => setIsOpen(!isOpen)}>
-            {
-              isOpen ? (
-                <AiOutlineClose className="w-6 h-6" />
-              ) : (
-                <RxHamburgerMenu className="w-6 h-6" />
-              )
-            }
+          <button
+            className="md:hidden"
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <AiOutlineClose className="w-6 h-6" />
+            ) : (
+              <RxHamburgerMenu className="w-6 h-6" />
+            )}
           </button>
         </div>
-        <div className={`${isOpen ? "block" : "hidden"} transition-all duration-1000 space-y-3 md:space-y-0 md:flex md:flex-row w-full items-center justify-between`}>
+        <div
+          className={`${isOpen ? "block" : "hidden"
+          } transition-all duration-1000 space-y-3 md:space-y-0 md:flex md:flex-row w-full items-center justify-between`}
+        >
           <div>
             <ul className="space-y-2 md:space-y-0 w-full md:flex md:flex-row md:gap-4">
               {routes.map((route) => (
@@ -42,19 +47,16 @@ export const NavbarComponent = ({ routes, user }) => {
             </ul>
           </div>
           <div>
-            {user && user.name ? (
+            {user && user?.name ? (
               <button
                 type="button"
                 className="block w-full md:flex md:flex-row items-center gap-2 text-justify bg-blue-700 transition duration-300 hover:bg-blue-800 rounded px-2 py-1 -mx-2 md:mx-0"
               >
                 {user.name}
               </button>
-            )
-              : (
-                <Link to="/login">
-                  Iniciar Sesión
-                </Link>
-              )}
+            ) : (
+              <Link to="/login">Iniciar Sesión</Link>
+            )}
           </div>
         </div>
       </div>

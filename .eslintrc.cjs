@@ -17,11 +17,15 @@ module.exports = {
     "react",
   ],
   rules: {
-    quotes: ["error", "double"],
-    "react/react-in-jsx-scope": "off",
-    "react/function-component-definition": "off",
-    "react/prop-types": "off",
-    "arrow-body-style": "off",
-    "import/prefer-default-export": "off",
+    quotes: ["warn", "double"],
+    semi: "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
   },
 };

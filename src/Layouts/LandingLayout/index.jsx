@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { NavbarComponent, FooterComponent } from "../../components";
+import { FooterComponent, NavbarComponent } from "../../components";
 
 const routes = [
   { name: "Inicio", href: "#" },
@@ -8,12 +8,10 @@ const routes = [
   { name: "Contacto", href: "#contacto" },
 ];
 
-export const LandingLayout = () => {
-  return (
-    <div className="flex flex-col h-screen place-content-between">
-      <NavbarComponent routes={routes} />
-      <Outlet />
-      <FooterComponent />
-    </div>
-  );
-};
+export const LandingLayout = () => (
+  <div className="flex flex-col h-screen place-content-between">
+    <NavbarComponent routes={routes} />
+    <Outlet />
+    <FooterComponent />
+  </div>
+);

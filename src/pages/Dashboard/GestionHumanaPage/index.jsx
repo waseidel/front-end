@@ -1,3 +1,1 @@
-export const GestionHumanaPage = () => {
-  return <div>GestionHumanaPage</div>;
-};
+export const GestionHumanaPage = () => <div>GestionHumanaPage</div>;

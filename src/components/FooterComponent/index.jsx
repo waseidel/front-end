@@ -1,8 +1,4 @@
-import {
-  BsFacebook,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 export const FooterComponent = () => {

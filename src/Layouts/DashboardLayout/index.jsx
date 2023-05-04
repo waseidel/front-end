@@ -1,9 +1,5 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
-import {
-  NavbarComponent,
-  FooterComponent,
-} from "../../components";
+import { FooterComponent, NavbarComponent } from "../../components";
 
 const routes = [
   { name: "Tablero de control", href: "/dashboard" },
@@ -19,14 +15,12 @@ const user = {
   status: "active",
 };
 
-export const DashboardLayout = () => {
-  return (
-    <div className="flex flex-col h-screen place-content-between">
-      <NavbarComponent routes={routes} user={user} />
-      <div className="bg-gray-300 h-full p-4">
-        <Outlet />
-      </div>
-      <FooterComponent />
+export const DashboardLayout = () => (
+  <div className="flex flex-col h-screen place-content-between">
+    <NavbarComponent routes={routes} user={user} />
+    <div className="bg-gray-300 h-full p-4">
+      <Outlet />
     </div>
-  );
-};
+    <FooterComponent />
+  </div>
+);
